@@ -1,0 +1,56 @@
+﻿@page
+@model E_WEBB.Pages.Contact_UseModel
+@{
+
+    Layout = null;
+}
+<link href="~/css/site02.css" rel="stylesheet" />
+<div class="comic-bg">
+
+    <h1>CONTACT THE TECH HEROES!</h1>
+
+    <div class="contact-container">
+
+        <!-- Email Form -->
+        <div class="contact-card">
+            <h2>📧 SEND US A MESSAGE!</h2>
+
+            <form method="post">
+                <label>Your Name</label>
+                <input type="text" name="Name" asp-for="Contact_Us_M01.Name" required />
+
+                <label>Your Email</label>
+                <input type="email" name="Email" asp-for="Contact_Us_M01.Email" required />
+
+                <label>Your Message</label>
+                <textarea name="Message" asp-for="Contact_Us_M01.Message" required></textarea>
+
+                <button type="submit" asp-page-handler="SendEmail" class="send-btn">
+                    🚀 SEND MESSAGE
+                </button>
+            </form>
+        </div>
+        <div class="status-label">
+
+            @Model.Contact_Us_M01.StatusMessage
+        </div>
+        <!-- Call Section -->
+        <div class="call-box">
+            📞 CALL NOW: @Model.Contact_Us_M01.phonenumber
+            <br />
+            💥 ONLY $25 PER REMOTE SESSION!
+        </div>
+        <div class="cta">
+            <form method="post">
+                <button type="submit" asp-page-handler="Back" class="send-btn">
+                    ⚡ Back ⚡
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 EASY CALLENDER — We Answer the Call!
+    </footer>
+
+</div>
